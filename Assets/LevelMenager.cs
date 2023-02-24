@@ -10,6 +10,7 @@ public class LevelMenager : MonoBehaviour
     float spawnTimer;
     public float spawnInterval = 5;
     public GameObject asteroidPrefab;
+    public GameObject gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,12 @@ public class LevelMenager : MonoBehaviour
                 break;
         }
         return randomSpawnLocation;
+    }
+    public void GameOver()
+    {
+        //stop time
+        Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 }
 
